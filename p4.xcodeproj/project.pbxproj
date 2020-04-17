@@ -17,6 +17,7 @@
 		223259602448ED9A00419139 /* p4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2232595F2448ED9A00419139 /* p4UITests.swift */; };
 		34C22DE02CAE23EA025B5F8B /* Pods_p4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0AA3BE3408FBD9E896922F /* Pods_p4.framework */; };
 		685986D6E835EB177AC29913 /* Example2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6859825325B890DA5F98F839 /* Example2View.swift */; };
+		68598BB54129DA46EF07A074 /* Example3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6859863FF31EEC270862DCC0 /* Example3View.swift */; };
 		68598CEA0D5B7E06D3FB6A2F /* Example1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68598BA517EC1A970C9BC122 /* Example1View.swift */; };
 		689F5F74E3CA9B1726A0FD24 /* Pods_p4Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F17444C816E541BDA31E30A /* Pods_p4Tests.framework */; };
 		97D4DC589B1333C935C743F0 /* Pods_p4_p4UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A7E51EE0CE0BA68800AA5A /* Pods_p4_p4UITests.framework */; };
@@ -59,6 +60,7 @@
 		5F46B14FDAD8F8048757778F /* Pods-p4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-p4Tests.debug.xcconfig"; path = "Target Support Files/Pods-p4Tests/Pods-p4Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6754E309C0EE759EE19B4CE6 /* Pods-p4Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-p4Tests.release.xcconfig"; path = "Target Support Files/Pods-p4Tests/Pods-p4Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6859825325B890DA5F98F839 /* Example2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example2View.swift; sourceTree = "<group>"; };
+		6859863FF31EEC270862DCC0 /* Example3View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example3View.swift; sourceTree = "<group>"; };
 		68598BA517EC1A970C9BC122 /* Example1View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example1View.swift; sourceTree = "<group>"; };
 		8DF9A856D8CA751892F1D765 /* Pods-p4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-p4.debug.xcconfig"; path = "Target Support Files/Pods-p4/Pods-p4.debug.xcconfig"; sourceTree = "<group>"; };
 		9F17444C816E541BDA31E30A /* Pods_p4Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_p4Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 				2232594B2448ED9A00419139 /* Info.plist */,
 				68598BA517EC1A970C9BC122 /* Example1View.swift */,
 				6859825325B890DA5F98F839 /* Example2View.swift */,
+				6859863FF31EEC270862DCC0 /* Example3View.swift */,
 			);
 			path = p4;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				223259402448ED9900419139 /* SceneDelegate.swift in Sources */,
 				68598CEA0D5B7E06D3FB6A2F /* Example1View.swift in Sources */,
 				685986D6E835EB177AC29913 /* Example2View.swift in Sources */,
+				68598BB54129DA46EF07A074 /* Example3View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DD6SSBWECL;
 				INFOPLIST_FILE = p4/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -613,6 +618,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DD6SSBWECL;
 				INFOPLIST_FILE = p4/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

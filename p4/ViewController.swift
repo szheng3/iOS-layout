@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    fileprivate var mainView: Example2View {
-        return self.view as! Example2View
+    fileprivate var mainView: Example3View {
+        return self.view as! Example3View
     }
 //
 //    init(pageType: PageType) {
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 //    }
 
     override func loadView() {
-        view = Example2View()
+        view = Example3View()
     }
 
     override func viewDidLoad() {

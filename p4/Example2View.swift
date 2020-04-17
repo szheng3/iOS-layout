@@ -17,6 +17,7 @@ class Example2View: UIView {
         let imageView2 = UIImageView(image: UIImage(named: "custom-ios-app-development1"))
         let segmentedControl = UISegmentedControl(items: ["Intro", "FlexLayout", "PinLayout"])
         segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
 
         let label = UILabel()
         label.text = "Flexbox layouting is simple, powerfull and fast.\n\nFlexLayout syntax is concise and chainable."
@@ -58,6 +59,19 @@ class Example2View: UIView {
 
         // Then let the flexbox container layout itself
         rootFlexContainer.flex.layout()
+    }
+    @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
+        print(segmentedControl.selectedSegmentIndex)
+        switch (segmentedControl.selectedSegmentIndex) {
+        case 0:
+            break // Uno
+        case 1:
+            break // Dos
+        case 2:
+            break // Tres
+        default:
+            break
+        }
     }
 
 }

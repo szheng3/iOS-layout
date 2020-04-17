@@ -16,6 +16,10 @@ class Example2View: UIView {
         let imageView = UIImageView(image: UIImage(named: "custom-ios-app-development1"))
         let imageView2 = UIImageView(image: UIImage(named: "custom-ios-app-development1"))
         let segmentedControl = UISegmentedControl(items: ["Intro", "FlexLayout", "PinLayout"])
+        let button = UIButton()
+        button.setImage(UIImage(named: "custom-ios-app-development1"), for: .normal)
+        button.addTarget(self, action: #selector(self.pressedAction), for: .touchUpInside)
+
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
 
@@ -38,6 +42,7 @@ class Example2View: UIView {
             }
             flex.addItem().height(1).marginHorizontal(3).marginTop(10).backgroundColor(.gray)
             flex.addItem(bottomLabel).marginTop(12)
+            flex.addItem(button).marginTop(12).alignSelf(.center).aspectRatio(of: imageView2).width(200)
 
         }
 
@@ -60,6 +65,7 @@ class Example2View: UIView {
         // Then let the flexbox container layout itself
         rootFlexContainer.flex.layout()
     }
+
     @objc func segmentAction(_ segmentedControl: UISegmentedControl) {
         print(segmentedControl.selectedSegmentIndex)
         switch (segmentedControl.selectedSegmentIndex) {
@@ -72,6 +78,12 @@ class Example2View: UIView {
         default:
             break
         }
+    }
+
+
+    @objc func pressedAction(_ uiButton: UIButton) {
+        print("pressed")
+
     }
 
 }

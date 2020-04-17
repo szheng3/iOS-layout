@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    fileprivate var mainView: Example1View {
-        return self.view as! Example1View
+    fileprivate var mainView: Example2View {
+        return self.view as! Example2View
     }
 //
 //    init(pageType: PageType) {
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 //    }
 
     override func loadView() {
-        view = Example1View()
+        view = Example2View()
     }
 
     override func viewDidLoad() {
@@ -31,7 +31,6 @@ class ViewController: UIViewController {
 
 //        view.addSubview(contentView)
 //        contentView.flex.
-        self.mainView.view1.backgroundColor=UIColor.white
 
 
     }

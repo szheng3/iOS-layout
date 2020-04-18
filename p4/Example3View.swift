@@ -52,7 +52,7 @@ class Example3View: UIView {
 
         rootFlexContainer.flex.direction(.column).marginHorizontal(8).define { flex in
             flex.addItem(imageView).aspectRatio(of: imageView)
-            flex.addItem().direction(.row).define { flex in
+            flex.addItem().direction(.row).paddingTop(8).define { flex in
                 flex.addItem(summaryPopularityLabel)
                 flex.addItem().direction(.row).grow(1).justifyContent(.spaceAround).define { flex in
                     flex.addItem(yearLabel)
@@ -96,11 +96,13 @@ class Example3View: UIView {
 
     func createImageLabel(imageName: String, labelName: String) -> UIView {
         let view = UIView()
-        let imageView = UIImageView(image: UIImage(named: imageName))
+        let imageView = UIButton()
+//        (image: UIImage(named: imageName))
+        imageView.setImage(UIImage(named: imageName), for: .normal)
         let label = UILabel()
         label.text = labelName
         view.flex.alignItems(.center).width(70).define { flex in
-            flex.addItem(imageView).shrink(1).width(50).aspectRatio(of: imageView)
+            flex.addItem(imageView).width(50).aspectRatio(of: UIImageView(image: UIImage(named: imageName)))
             flex.addItem(label)
         }
         return view;

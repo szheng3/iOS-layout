@@ -12,7 +12,7 @@ class Example3View: UIView {
     fileprivate let rootFlexContainer = UIView()
     fileprivate let contentView = UIScrollView()
 
-    let episodeImageView = UIImageView()
+    let episodeImageView = UIImageView(image: UIImage(named: "custom-ios-app-development1"))
     let summaryPopularityLabel = UILabel()
     let episodeTitleLabel = UILabel()
     let descriptionLabel = UILabel()
@@ -27,7 +27,7 @@ class Example3View: UIView {
         series = Series(shows: shows)
         backgroundColor = .white
 
-        let imageView = UIImageView(image: UIImage(named: "custom-ios-app-development1"))
+
 
         // Popularity
         summaryPopularityLabel.text = String(repeating: "★", count: series!.showPopularity)
@@ -64,7 +64,7 @@ class Example3View: UIView {
 
 
         rootFlexContainer.flex.direction(.column).marginHorizontal(8).define { flex in
-            flex.addItem(imageView).aspectRatio(of: imageView)
+            flex.addItem(episodeImageView).aspectRatio(of: episodeImageView)
             flex.addItem().direction(.row).paddingTop(8).define { flex in
                 flex.addItem(summaryPopularityLabel)
                 flex.addItem().direction(.row).grow(1).justifyContent(.spaceAround).define { flex in
@@ -161,10 +161,10 @@ class Example3View: UIView {
         episodeImageView.flex.aspectRatio(imageAspectRatio).markDirty()
 
         episodeTitleLabel.text = show.title
-        episodeTitleLabel.flex.markDirty()
+//        episodeTitleLabel.flex.markDirty()
 
         descriptionLabel.text = show.detail
-        descriptionLabel.flex.markDirty()
+//        descriptionLabel.flex.markDirty()
 
         // Force a relayout
         setNeedsLayout()

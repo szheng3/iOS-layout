@@ -40,10 +40,14 @@ class Example3View: UIView {
         lengthLabel.text = series.showLength
         lengthLabel.textColor = .lightGray
 
+        //imageUIVIew
+        let imageLabel = createImageLabel(imageName: "nan", labelName: "male")
+        let nv = createImageLabel(imageName: "nv", labelName: "female")
+
         let description = UILabel()
         description.text = series.showDescript
         description.textColor = .lightGray
-        description.numberOfLines=0
+        description.numberOfLines = 0
 
 
         rootFlexContainer.flex.direction(.column).marginHorizontal(8).define { flex in
@@ -58,7 +62,12 @@ class Example3View: UIView {
                 flex.addItem().width(100).height(1).grow(1)
 
             }
-            flex.addItem(description).paddingTop(8)
+            flex.addItem(description).paddingVertical(8)
+            flex.addItem().direction(.row).define { flex in
+                flex.addItem(imageLabel)
+                flex.addItem(nv)
+
+            }
 
 
         }
@@ -83,6 +92,20 @@ class Example3View: UIView {
 
         // 3) Adjust the scrollview contentSize
         contentView.contentSize = rootFlexContainer.frame.size
+    }
+
+    func createImageLabel(imageName: String, labelName: String) -> UIView {
+        let view = UIView()
+        let imageView = UIImageView(image: UIImage(named: imageName))
+        let label = UILabel()
+        label.text = labelName
+        view.flex.alignItems(.center).width(70).define { flex in
+            flex.addItem(imageView).shrink(1).width(50).aspectRatio(of: imageView)
+            flex.addItem(label)
+        }
+        return view;
+
+
     }
 
 

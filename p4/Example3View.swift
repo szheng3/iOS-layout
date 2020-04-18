@@ -13,6 +13,8 @@ class Example3View: UIView {
     let summaryPopularityLabel = UILabel()
     let episodeTitleLabel = UILabel()
     let descriptionLabel = UILabel()
+    let tableView = UITableView()
+
 
     init() {
         let series = Series()
@@ -49,6 +51,9 @@ class Example3View: UIView {
         description.textColor = .lightGray
         description.numberOfLines = 0
 
+        //TableView
+        tableView.delegate = self
+        tableView.dataSource = self
 
         rootFlexContainer.flex.direction(.column).marginHorizontal(8).define { flex in
             flex.addItem(imageView).aspectRatio(of: imageView)
@@ -67,6 +72,9 @@ class Example3View: UIView {
                 flex.addItem(imageLabel)
                 flex.addItem(nv)
 
+            }
+            flex.addItem().paddingVertical(8).define { flex in
+                flex.addItem(tableView)
             }
 
 
@@ -136,3 +144,13 @@ struct Series {
 //    let image: String
 //    let showPopularity = 5
 //}
+extension Example3View: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        6
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+
+}

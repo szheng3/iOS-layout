@@ -5,6 +5,9 @@
 
 import UIKit
 
+import FlexLayout
+import PinLayout
+
 class Example3View: UIView {
     fileprivate let rootFlexContainer = UIView()
     fileprivate let contentView = UIScrollView()
@@ -73,6 +76,8 @@ class Example3View: UIView {
                 flex.addItem(nv)
 
             }
+
+
             flex.addItem().paddingVertical(8).define { flex in
                 flex.addItem(tableView)
             }
@@ -109,8 +114,8 @@ class Example3View: UIView {
         imageView.setImage(UIImage(named: imageName), for: .normal)
         let label = UILabel()
         label.text = labelName
-        view.flex.alignItems(.center).width(70).define { flex in
-            flex.addItem(imageView).width(50).aspectRatio(of: UIImageView(image: UIImage(named: imageName)))
+        view.flex.alignItems(.center).width(60).define { flex in
+            flex.addItem(imageView).width(100%).aspectRatio(of: UIImageView(image: UIImage(named: imageName)))
             flex.addItem(label)
         }
         return view;

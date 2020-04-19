@@ -7,10 +7,12 @@ import UIKit
 
 class Example2View: UIView {
     fileprivate let rootFlexContainer = UIView()
+    var control: ViewController?
 
 
-    init() {
+    init(viewController: ViewController) {
         super.init(frame: .zero)
+        self.control = viewController
         backgroundColor = .white
 
         let imageView = UIImageView(image: UIImage(named: "custom-ios-app-development1"))
@@ -82,8 +84,24 @@ class Example2View: UIView {
 
 
     @objc func pressedAction(_ uiButton: UIButton) {
-        print("pressed")
+        let navigationController = UINavigationController(rootViewController: NavController())
 
+        navigationController.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+        navigationController.navigationItem.backBarButtonItem?.isEnabled = true
+
+//
+//        navigationController.navigationItem.backBarButtonItem?.isEnabled = true
+//        navigationController.navigationItem.hidesBackButton = false
+        navigationController.navigationBar.isUserInteractionEnabled = true
+
+
+
+        control?.present(navigationController, animated: true, completion: nil)
+
+
+    }
+    @objc func back() {
+//        self.dismiss(animated: true, completion: nil)
     }
 
 }

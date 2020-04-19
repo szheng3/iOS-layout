@@ -18,15 +18,23 @@ class Example3View: UIView {
     let descriptionLabel = UILabel()
     let tableView = ExpandedTableView()
     fileprivate var series: Series?
+    let contentView2 = UIScrollView()
+    let overview = UIView.init(frame: CGRect(x: 0, y: 0, width: 1000, height: 100))
 
+    let imageLabel2 = UIImageView(image: UIImage(named: "custom-ios-app-development1"))
+    let imageLabel3 = UIImageView(image: UIImage(named: "custom-ios-app-development1"))
+
+    var ho: UIView = UIView()
 
     init() {
+
         super.init(frame: .zero)
+        ho=createHo()
+
 
         let shows = loadShows()
         series = Series(shows: shows)
         backgroundColor = .white
-
 
 
         // Popularity
@@ -62,6 +70,13 @@ class Example3View: UIView {
         tableView.dataSource = self
         tableView.register(ShowTableViewCell.self, forCellReuseIdentifier: ShowTableViewCell.reuseIdentifier)
 
+        //scroll2
+
+        overview.backgroundColor = UIColor.green
+
+//        contentView2.translatesAutoresizingMaskIntoConstraints = false
+//        contentView2.addSubview(overview)
+
 
         rootFlexContainer.flex.direction(.column).marginHorizontal(8).define { flex in
             flex.addItem(episodeImageView).aspectRatio(of: episodeImageView)
@@ -82,6 +97,17 @@ class Example3View: UIView {
 
             }
 
+            flex.addItem(contentView2).direction(.row).define { flex in
+//                flex.addItem(overview).width(1000)
+                flex.addItem(ho)
+//                flex.addItem(imageLabel3).width(imageLabel3.frame.size.width)
+//
+//                flex.addItem().direction(.column).define { flex in
+//                    flex.addItem(overview)
+////                    flex.addItem(imageLabel3).width(400)
+//                }
+
+            }
 
             flex.addItem().paddingVertical(8).define { flex in
                 flex.addItem(tableView)
@@ -100,7 +126,19 @@ class Example3View: UIView {
         super.init(coder: aDecoder)
     }
 
+    func createHo() -> UIView {
+        let ui = UIView()
+
+        ui.flex.direction(.row).define { flex in
+            flex.addItem(imageLabel2).width(500)
+            flex.addItem(imageLabel3).width(500)
+        }
+        return ui
+
+    }
+
     override func layoutSubviews() {
+
         // 1) Layout the contentView & rootFlexContainer using PinLayout
         contentView.pin.all(pin.safeArea)
         rootFlexContainer.pin.top().left().right()
@@ -110,7 +148,27 @@ class Example3View: UIView {
 
         // 3) Adjust the scrollview contentSize
         contentView.contentSize = rootFlexContainer.frame.size
+
+
+//        contentView2.pin.all()
+        ho.pin.top().left().bottom()
+        ho.flex.layout(mode: .adjustWidth)
+
+
+        contentView2.contentSize = ho.frame.size as! CGSize
+
     }
+
+//    func createHo() -> UIView {
+//        let view = UIView()
+//        view.flex.direction(.row).define { flex in
+//            flex.addItem(imageLabel2).width(500)
+//            flex.addItem(imageLabel3).width(500)
+//        }
+//        return view
+//
+//
+//    }
 
     func createImageLabel(imageName: String, labelName: String) -> UIView {
         let view = UIView()

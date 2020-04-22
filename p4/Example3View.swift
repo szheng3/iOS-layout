@@ -219,10 +219,10 @@ class Example3View: UIView {
         episodeImageView.flex.aspectRatio(imageAspectRatio).markDirty()
 
         episodeTitleLabel.text = show.title
-//        episodeTitleLabel.flex.markDirty()
+        episodeTitleLabel.flex.markDirty()
 
         descriptionLabel.text = show.detail
-//        descriptionLabel.flex.markDirty()
+        descriptionLabel.flex.markDirty()
 
         // Force a relayout
         setNeedsLayout()

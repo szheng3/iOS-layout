@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Bond
+import ReactiveKit
 
 class ViewController: UIViewController {
 
@@ -60,7 +62,9 @@ class NavController: UIViewController {
 
         self.navigationItem.title = "gg"
         self.navigationItem.hidesBackButton = false
+
         let backButton: UIBarButtonItem = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(back))
+//        let backButton: UIBarButtonItem = UIBarButtonItem(title: "<", style: .plain).
         self.navigationItem.leftBarButtonItem = backButton
 
         super.viewDidLoad()

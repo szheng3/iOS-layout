@@ -4,6 +4,8 @@
 //
 
 import UIKit
+import Bond
+import ReactiveKit
 
 class Example2View: UIView {
     fileprivate let rootFlexContainer = UIView()
@@ -35,7 +37,24 @@ class Example2View: UIView {
         let segmentedControl = UISegmentedControl(items: ["Intro", "FlexLayout", "PinLayout"])
         let button = UIButton()
         button.setImage(UIImage(named: "custom-ios-app-development1"), for: .normal)
-        button.addTarget(self, action: #selector(self.pressedAction), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(self.pressedAction), for: .touchUpInside)
+        button.reactive.tap
+            .observeNext { e in
+                print("Button tapped.")
+                let navigationController = UINavigationController(rootViewController: NavController())
+
+                navigationController.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                navigationController.navigationItem.backBarButtonItem?.isEnabled = true
+
+//
+//        navigationController.navigationItem.backBarButtonItem?.isEnabled = true
+//        navigationController.navigationItem.hidesBackButton = false
+                navigationController.navigationBar.isUserInteractionEnabled = true
+
+
+
+                self.control?.present(navigationController, animated: true, completion: nil)
+            }
 
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)

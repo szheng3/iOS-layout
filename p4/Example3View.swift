@@ -241,7 +241,7 @@ struct Series {
     let showCreators = "Mark Gatiss, Steven Moffat"
     let showDescript = "Benedict Cumberbatch, Martin Freeman, Una Stubbs.Benedict Cumberbatch, Martin Freeman, Una Stubbs.Benedict Cumberbatch, Martin Freeman, Una Stubbs.Benedict Cumberbatch, Martin Freeman, Una Stubbs.Benedict Cumberbatch, Martin Freeman, Una Stubbs,Benedict Cumberbatch, Martin Freeman, Una Stubbs,Benedict Cumberbatch, Martin Freeman, Una Stubbs,Benedict Cumberbatch, Martin Freeman, Una Stubbs"
 
-    let shows: [Show]
+    var shows: [Show]
 
 
 }
@@ -273,6 +273,12 @@ extension Example3View: UITableViewDataSource, UITableViewDelegate {
         didSelectShow(show: (series?.shows[indexPath.row])!)
     }
 
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            series?.shows.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
 }
 
 class ExpandedTableView: UITableView {

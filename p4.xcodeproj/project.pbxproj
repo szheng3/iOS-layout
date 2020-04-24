@@ -15,6 +15,9 @@
 		2232594A2448ED9A00419139 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223259482448ED9A00419139 /* LaunchScreen.storyboard */; };
 		223259552448ED9A00419139 /* p4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223259542448ED9A00419139 /* p4Tests.swift */; };
 		223259602448ED9A00419139 /* p4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2232595F2448ED9A00419139 /* p4UITests.swift */; };
+		228279C0245359A400040FC7 /* XIBTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228279BE245359A400040FC7 /* XIBTableViewCell.swift */; };
+		228279C1245359A400040FC7 /* XIBTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 228279BF245359A400040FC7 /* XIBTableViewCell.xib */; };
+		228279C32453646400040FC7 /* Shakeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228279C22453646400040FC7 /* Shakeable.swift */; };
 		34C22DE02CAE23EA025B5F8B /* Pods_p4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0AA3BE3408FBD9E896922F /* Pods_p4.framework */; };
 		685986D6E835EB177AC29913 /* Example2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6859825325B890DA5F98F839 /* Example2View.swift */; };
 		6859875CB11DCBA44EAEE743 /* Shows.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68598E961A29C08694A67240 /* Shows.plist */; };
@@ -57,6 +60,9 @@
 		2232595B2448ED9A00419139 /* p4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = p4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2232595F2448ED9A00419139 /* p4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p4UITests.swift; sourceTree = "<group>"; };
 		223259612448ED9A00419139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		228279BE245359A400040FC7 /* XIBTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBTableViewCell.swift; sourceTree = "<group>"; };
+		228279BF245359A400040FC7 /* XIBTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XIBTableViewCell.xib; sourceTree = "<group>"; };
+		228279C22453646400040FC7 /* Shakeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shakeable.swift; sourceTree = "<group>"; };
 		45A7E51EE0CE0BA68800AA5A /* Pods_p4_p4UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_p4_p4UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5332F0FC0B6FEE2966D2C9E6 /* Pods-p4-p4UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-p4-p4UITests.release.xcconfig"; path = "Target Support Files/Pods-p4-p4UITests/Pods-p4-p4UITests.release.xcconfig"; sourceTree = "<group>"; };
 		5F46B14FDAD8F8048757778F /* Pods-p4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-p4Tests.debug.xcconfig"; path = "Target Support Files/Pods-p4Tests/Pods-p4Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 		2232593C2448ED9900419139 /* p4 */ = {
 			isa = PBXGroup;
 			children = (
+				228279C22453646400040FC7 /* Shakeable.swift */,
 				2232593D2448ED9900419139 /* AppDelegate.swift */,
 				2232593F2448ED9900419139 /* SceneDelegate.swift */,
 				223259412448ED9900419139 /* ViewController.swift */,
@@ -138,6 +145,8 @@
 				6859863FF31EEC270862DCC0 /* Example3View.swift */,
 				685986C741A4AD405F82249A /* ShowTableViewCell.swift */,
 				68598E961A29C08694A67240 /* Shows.plist */,
+				228279BE245359A400040FC7 /* XIBTableViewCell.swift */,
+				228279BF245359A400040FC7 /* XIBTableViewCell.xib */,
 			);
 			path = p4;
 			sourceTree = "<group>";
@@ -295,6 +304,7 @@
 				2232594A2448ED9A00419139 /* LaunchScreen.storyboard in Resources */,
 				223259472448ED9A00419139 /* Assets.xcassets in Resources */,
 				223259452448ED9900419139 /* Main.storyboard in Resources */,
+				228279C1245359A400040FC7 /* XIBTableViewCell.xib in Resources */,
 				6859875CB11DCBA44EAEE743 /* Shows.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +440,8 @@
 				685986D6E835EB177AC29913 /* Example2View.swift in Sources */,
 				68598BB54129DA46EF07A074 /* Example3View.swift in Sources */,
 				68598D61F6E05505CAC39CA3 /* ShowTableViewCell.swift in Sources */,
+				228279C32453646400040FC7 /* Shakeable.swift in Sources */,
+				228279C0245359A400040FC7 /* XIBTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

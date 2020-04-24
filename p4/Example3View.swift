@@ -29,7 +29,7 @@ class Example3View: UIView {
     init() {
 
         super.init(frame: .zero)
-        ho=createHo()
+        ho = createHo()
 
 
         let shows = loadShows()
@@ -273,12 +273,28 @@ extension Example3View: UITableViewDataSource, UITableViewDelegate {
         didSelectShow(show: (series?.shows[indexPath.row])!)
     }
 
-    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            series?.shows.remove(at: indexPath.row)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let contextItem = UIContextualAction(style: .normal, title: "gg") { (contextualAction, view, boolValue) in
+            //Code I want to do here
+//            view.backgroundColor=UIColor.blue
+            self.series?.shows.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+
+            print("gg")
         }
+
+        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
+
+        return swipeActions
     }
+
+
+//    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCell.EditingStyle.delete {
+//            series?.shows.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+//        }
+//    }
 }
 
 class ExpandedTableView: UITableView {

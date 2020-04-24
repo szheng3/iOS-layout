@@ -6,6 +6,7 @@
 import UIKit
 import Bond
 import ReactiveKit
+import Differ
 
 class Example2View: UIView {
     fileprivate let rootFlexContainer = UIView()
@@ -57,7 +58,11 @@ class Example2View: UIView {
             }
 
         segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
+//        segmentedControl.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
+        _ = segmentedControl.reactive.controlEvents(.valueChanged).observeNext { e in
+
+            print(segmentedControl.selectedSegmentIndex)
+        }
 
         let label = UILabel()
         label.text = "Flexbox layouting is simple, powerfull and fast.\n\nFlexLayout syntax is concise and chainable."
